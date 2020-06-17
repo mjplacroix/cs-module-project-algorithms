@@ -4,8 +4,19 @@ Returns: an integer
 '''
 def single_number(arr):
     # Your code here
+    # new list
+    new_list = []
 
-    pass
+    # iterate through arr
+    for num in range(len(arr)):
+    # if not new list, append - pop
+        if arr[num] not in new_list:
+            new_list.append(arr[num])
+        elif arr[num] in new_list:
+            new_list.remove(arr[num])
+
+    # return remaining number in new list
+    return new_list[0]
 
 
 if __name__ == '__main__':
