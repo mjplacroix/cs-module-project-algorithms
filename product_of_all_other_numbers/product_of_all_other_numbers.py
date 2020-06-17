@@ -5,7 +5,21 @@ Returns: a List of integers
 def product_of_all_other_numbers(arr):
     # Your code here
 
-    pass
+    multiples = []
+    
+    #iterate through the list
+    for num in range(len(arr)):
+    #temp create new list without current index
+        temp_list = arr.copy()
+        temp_list.remove(arr[num])
+    #loop through through that temp list to get multiple and append this number to new list
+        multiple = 1
+        for num in temp_list:
+            multiple = num * multiple
+        multiples.append(multiple)
+
+    # return new list
+    return multiples
 
 
 if __name__ == '__main__':
